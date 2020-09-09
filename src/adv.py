@@ -1,4 +1,12 @@
+#adv.py
+
+
+
+#Imports
+
 from room import Room
+from player import Player
+
 
 # Declare all the rooms
 
@@ -39,6 +47,9 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
+player_1 = Player("Player_1", room[("outside")])
+
+
 # Write a loop that:
 #
 # * Prints the current room name
@@ -49,3 +60,21 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+
+# Write a loop that:
+
+while True:
+    player_1.current_room
+
+    # * Prints the current room name
+
+    print("\nYou are currently in room:\n", player_1.current_room.name)
+    
+    # * Prints the current description (the textwrap module might be useful here).
+
+    print("\nDescription:\n", player_1.current_room_description)
+
+    # * Waits for user input and decides what to do.
+
+    cmd = input("\nPress 'n', 's', 'e', 'w' to move to a different room:\n")
