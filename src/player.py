@@ -11,10 +11,13 @@ from item import Item
 # currently.
 
 class Player():
-    def __init__(self, name, current_room):
+    def __init__(self, name, current_room, inventory=None):
         self.name = name
         self.current_room = current_room
-        self.inventory = []
+        self.inventory = [] if inventory is None else inventory
+
+    def __str__(self):
+        return f"Name: {self.name}, Current Location: {self.current_room}, Inventory: {self.inventory}"
 
     def add_item(self, item):
         self.inventory.append(item)
